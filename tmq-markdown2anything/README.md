@@ -176,6 +176,13 @@ pip3 install -r scripts/requirements.txt
 - PDF/DOCX requires Claude with document-skills plugin
 - Script prints instructions for Claude to execute
 
+### Text Overflows Page Boundaries in PDF
+**Fixed in v1.1.0**
+- All PDF output now includes automatic text wrapping
+- Code blocks and prompts wrap long lines within margins
+- No horizontal overflow for any content
+- Technical details in SKILL.md troubleshooting section
+
 ## Claude Skill
 
 This is a Claude Agent Skill. When used within Claude Code or Claude Agent SDK:
@@ -202,4 +209,5 @@ Created as part of the Claude Agent Skills Creator toolkit.
 
 ## Version
 
+1.1.0 - Fixed PDF layout issues with text wrapping for code blocks and prompts
 1.0.0 - Initial release with PDF, DOCX, and HTML support

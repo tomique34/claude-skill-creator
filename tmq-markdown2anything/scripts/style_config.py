@@ -80,10 +80,28 @@ TABLES:
 - Header Text: {self.colors.table_header_text}
 - Alternating Rows: {self.colors.table_row_alt if self.tables.alternating_rows else 'None'}
 - Border Style: {self.tables.border_style}
+- Cell Text Wrapping: Enabled (word-wrap: break-word)
 
 PAGE LAYOUT:
 - Margins: T:{self.layout.margin_top} B:{self.layout.margin_bottom} L:{self.layout.margin_left} R:{self.layout.margin_right}
 - Line Spacing: {self.layout.line_spacing}
+- Page Width: Respect margins strictly
+- Overflow Handling: Wrap all text, no horizontal overflow
+
+CODE BLOCKS AND PROMPTS:
+- Word Wrapping: Enabled (white-space: pre-wrap)
+- Overflow: break-word (overflow-wrap: break-word)
+- Max Width: 100% of content area (respect margins)
+- Long Lines: Wrap to next line, don't overflow page
+- Background: #f5f5f5
+- Padding: 10px (internal spacing)
+- Border: 1px solid #ddd
+
+TEXT FORMATTING:
+- All Text Elements: word-wrap: break-word
+- Long Words: overflow-wrap: break-word (break if necessary)
+- URLs: break-word (don't overflow)
+- Paragraphs: Keep within margins, wrap naturally
 """
         return instructions.strip()
 

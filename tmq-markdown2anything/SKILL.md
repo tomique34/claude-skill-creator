@@ -336,6 +336,27 @@ HTML examples:
 - Script prints instructions for Claude to execute
 - Verify document-skills plugin is available
 
+### Issue: Text Overflows Page Boundaries in PDF
+
+**Problem**: Prompts in code blocks or long lines overflow outside defined page margins in PDF output (HTML works correctly).
+
+**Solution**:
+The skill now includes automatic text wrapping for PDF output:
+- All text respects page margins strictly
+- Code blocks and prompts wrap long lines automatically
+- Table cells wrap content with word-wrap: break-word
+- No horizontal overflow in any text elements
+- Long URLs and words break if necessary
+
+**Technical Details**:
+The fix is implemented in `scripts/style_config.py` in the `get_styling_instructions()` method:
+- `CODE BLOCKS AND PROMPTS` section enables white-space: pre-wrap
+- `TEXT FORMATTING` section enables word-wrap: break-word for all elements
+- `PAGE LAYOUT` section enforces strict margin respect
+- Maximum width set to 100% of content area (respects margins)
+
+This ensures all content, including long prompts and code blocks, stays within the defined page boundaries when document-skills:pdf generates the final PDF.
+
 ## Workflow Integration
 
 ### For PDF/DOCX
