@@ -1,0 +1,5 @@
+# Python dependencies for tmq-markdown2anything
+# Minimal dependencies - document-skills handles PDF/DOCX generation
+
+# Markdown parser with extensions
+markdown==3.7
